@@ -1,12 +1,17 @@
 //here is the javascript file
-var WholeBlock = document.querySelectorAll(".Timeblocks");
-var nineAm = document.querySelector("#9");
-var tenAm = document.querySelector("#10");
-var elevenAm = document.querySelector("#11");
-var twelveAm = document.querySelector("#12");
-var oneAm = document.querySelector("#1");
-var twoAm = document.querySelector("#2");
-var threeAm = document.querySelector("#3");
-var fourAm = document.querySelector("#4");
-var fiveAm = document.querySelector("#5");
-var currentDay = document.querySelector("#currentDay");
+var WholeBlock = $(".Timeblocks");
+var nineAm = $("#9");
+var tenAm = $("#10");
+var elevenAm = $("#11");
+var twelveAm = $("#12");
+var oneAm = $("#1");
+var twoAm = $("#2");
+var threeAm = $("#3");
+var fourAm = $("#4");
+var fiveAm = $("#5");
+var currentDay = $("#currentDay");
+
+
+//dddd, MMMM Do YYYY moment format
+var today = moment().format("dddd, MMMM Do YYYY");
+currentDay.text(today);
