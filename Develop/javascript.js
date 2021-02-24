@@ -45,13 +45,20 @@ function BlockColor(x = this){
         TaskInput.addClass('bg-danger');
     }
 
+    var currentHour = x.data("hour");
+
     var Btndiv = $('button');
     var addBtn = x.find(Btndiv); 
     addBtn.on("click", function(){
     console.log("savePlan func ");
-});
+     currentPlan = TaskInput.val();
+     console.log(currentPlan);
+     localStorage.setItem(currentHour, currentPlan);
+
+    });
 }
 
+//also going to need to add functionality, to display saved plans onto the planner from past sessions
 
 //for saving the inputs, only have whatever is in the box, be what is saved to the localstorage. no weird saving/populating
 // for loop to add click listener to all the buttons, then call savePlans function in the eventlistener
