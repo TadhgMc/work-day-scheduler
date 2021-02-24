@@ -44,6 +44,12 @@ function BlockColor(x = this){
     } else{
         TaskInput.addClass('bg-danger');
     }
+
+    var Btndiv = $('button');
+    var addBtn = x.find(Btndiv); 
+    addBtn.on("click", function(){
+    console.log("savePlan func ");
+});
 }
 
 
@@ -53,10 +59,7 @@ function BlockColor(x = this){
 
 //can the eventlistener just be added in the earlier for loop to add the listner to each button?
 
-var addBtn = $('#SaveBtn');
-addBtn.on("click", function(){
-    console.log("savePlan func ");
-});
+
 
 // var savePlans = function() {
     
