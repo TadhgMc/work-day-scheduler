@@ -46,6 +46,8 @@ function BlockColor(x = this){
     }
 
     var currentHour = x.data("hour");
+    
+    TaskInput.val(localStorage.getItem(currentHour));
 
     var Btndiv = $('button');
     var addBtn = x.find(Btndiv); 
@@ -54,8 +56,11 @@ function BlockColor(x = this){
      currentPlan = TaskInput.val();
      console.log(currentPlan);
      localStorage.setItem(currentHour, currentPlan);
-
     });
+
+    
+    
+
 }
 
 //also going to need to add functionality, to display saved plans onto the planner from past sessions
