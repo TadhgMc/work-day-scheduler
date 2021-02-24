@@ -18,22 +18,25 @@ var currentDay = $("#currentDay");
 var today = moment().format("dddd, MMMM Do YYYY");
 currentDay.text(today);
 
+// addBtn.addEventListener("click", savePlans);
 
-console.log(WholeBlock.data("hour"));
+console.log(WholeBlock.data("hour")); //to test calling data info
 
 //creating a variable that shows what hour it is as an integer
 var hour = parseInt(moment().format("H"));
-console.log(hour);
+console.log(hour);//make sure correct hour is chosen
 
-// make each row run this function BlockColor, which can be a loop (?)
+// make each row run this function BlockColor
 //make each div variable in an array, then choose i for which one to call
-
 var AllBlock = [nineAm,tenAm,elevenAm,twelveAm,thirteen,fourteen,fifteen,sixteen,seventeen];
 
 for (var i = 0; i < AllBlock.length; i++) {
-    // console.log(AllBlock[i]);
+    var addBtn = $(".SaveBtn");
+    console.log(AllBlock[i].addBtn);
     BlockColor(AllBlock[i]);
+    
 }
+
 //make an interval to check the time every 30 mins(?) then update the colors accordingly (?)
 function BlockColor(x = this){
     var input = $('input');
@@ -48,5 +51,13 @@ function BlockColor(x = this){
 }
 
 
+//for saving the inputs, only have whatever is in the box, be what is saved to the localstorage. no weird saving/populating
+// for loop to add click listener to all the buttons, then call savePlans function in the eventlistener
 
+
+//can the eventlistener just be added in the earlier for loop to add the listner to each button?
+var savePlans = function(event) {
+    addBtn.addClass('test');
+    console.log("savePlan func " + event.target);
+}
 // MIGHT GENERALLY NEED TO BE MORE SPECIFIC WITH WHICH DIV WE ARE TARGETING FOR WHAT
