@@ -18,7 +18,6 @@ var currentDay = $("#currentDay");
 var today = moment().format("dddd, MMMM Do YYYY");
 currentDay.text(today);
 
-// addBtn.addEventListener("click", savePlans);
 
 console.log(WholeBlock.data("hour")); //to test calling data info
 
@@ -31,10 +30,7 @@ console.log(hour);//make sure correct hour is chosen
 var AllBlock = [nineAm,tenAm,elevenAm,twelveAm,thirteen,fourteen,fifteen,sixteen,seventeen];
 
 for (var i = 0; i < AllBlock.length; i++) {
-    var addBtn = $(".SaveBtn");
-    console.log(AllBlock[i].addBtn);
     BlockColor(AllBlock[i]);
-    
 }
 
 //make an interval to check the time every 30 mins(?) then update the colors accordingly (?)
@@ -56,8 +52,13 @@ function BlockColor(x = this){
 
 
 //can the eventlistener just be added in the earlier for loop to add the listner to each button?
-var savePlans = function(event) {
-    addBtn.addClass('test');
-    console.log("savePlan func " + event.target);
-}
+
+var addBtn = $('#SaveBtn');
+addBtn.on("click", function(){
+    console.log("savePlan func ");
+});
+
+// var savePlans = function() {
+    
+// }
 // MIGHT GENERALLY NEED TO BE MORE SPECIFIC WITH WHICH DIV WE ARE TARGETING FOR WHAT
