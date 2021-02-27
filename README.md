@@ -12,4 +12,4 @@ Colors of each box represent; Red: Hours that have already passed in the day. Bl
 
 
 ## Site Link
-https://tadhgmc.github.io/Work_Day_Scheduler/
+https://tadhgmc.github.io/work-day-scheduler/
