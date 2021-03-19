@@ -39,7 +39,7 @@ for (var i = 0; i < AllBlock.length; i++) {
 /*here is function that is called in the for loop
 this section references the input from the "for" loop (AllBlock[1]) as "this"
 and makes the variable "x" point to whichever part of the array "AllBlocks" is referenced to by the "for" loop*/
-function BlockColor(x = this){
+function BlockColor(x){  // = this
     /*lines 47-56 finds the input element in each div referenced in the AllBlocks array,
     then changes the background color to either red, blue or green depending if
     the time has passed, it is currently that time, or it is still to come.
@@ -73,3 +73,19 @@ function BlockColor(x = this){
      localStorage.setItem(currentHour, currentPlan);
     });
 }
+
+// 
+function getWeather (){
+    fetch("https://api.openweathermap.org/data/2.5/find?q=columbus&units=imperial&appid=096317ae116f5805e156e4177ebd6d5a")
+    .then(function (response) {
+        console.log(response)
+        return response.json();
+    })
+    .then( function (data) {
+        //taking data from weather api and putting it onto the page
+        console.log(data);
+        $('#wIcon').attr('src', `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`);
+        $('#feelz').text(data.list[0].main.feels_like);
+    });
+}
+getWeather();
